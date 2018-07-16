@@ -13,8 +13,6 @@
 # limitations under the License.
 
 imports:
-- path: python/enable_apis.py
-  name: enable_apis.py
 - path: python/make_public_buckets.py
   name: make_public_buckets.py
 - path: python/make_custom_network.py
@@ -49,20 +47,6 @@ imports:
   name: make_gfrs.py
 
 resources:
-
-# last check on names and stuff
-# squash commits
-# push to master
-# collapse to one repo
-- name: apis
-  type: enable_apis.py
-  properties:
-    billing_account: billingAccounts/009B48-88CB34-9296BE
-    apis:
-      - sql-component.googleapis.com
-      - sqladmin.googleapis.com
-      - pubsub.googleapis.com
-
 - name: buckets
   type: make_public_buckets.py
   properties:
@@ -145,7 +129,7 @@ resources:
 - name: sql_instance
   type: make_sql_instance.py
   properties:
-    name: lms-sql
+    name: <sql_name>
     region: us-central1
     tier: db-n1-standard-1
     activationPolicy: ALWAYS
@@ -156,7 +140,7 @@ resources:
   properties:
     db_names:
     - lms
-    instance: lms-sql
+    instance: <sql_name>
 
 - name: vms
   type: make_vms.py
@@ -421,7 +405,6 @@ resources:
     - map1:
       name: lms-demo-lb
       service: lms-backend-service
-
 
 - name: proxies
   type: make_target_proxies.py
