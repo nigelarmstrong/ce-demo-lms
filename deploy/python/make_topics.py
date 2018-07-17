@@ -31,7 +31,6 @@ def GenerateConfig(context):
 		}
 		if context.properties['wait_for_api']:
 			resource['metadata'] = {}
-			resource['metadata']['dependsOn'] = ['pubsub.googleapis.com']
 
 		resources.append(resource)
 
