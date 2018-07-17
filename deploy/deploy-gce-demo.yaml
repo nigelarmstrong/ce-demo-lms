@@ -197,6 +197,7 @@ resources:
           cd /
           git clone https://github.com/jwdavis/ce-demo-lms.git
           cd ce-demo-lms
+          git checkout arch_update
           chmod u+x /ce-demo-lms/admin/finish_web_setup.sh
           /ce-demo-lms/admin/finish_web_setup.sh {} {}
           touch /initialized.txt
@@ -229,6 +230,7 @@ resources:
           cd /
           git clone https://github.com/jwdavis/ce-demo-lms.git
           cd ce-demo-lms
+          git checkout arch_update
           chmod u+x /ce-demo-lms/admin/finish_web_setup.sh
           /ce-demo-lms/admin/finish_web_setup.sh {} {}
           touch /initialized.txt
@@ -261,6 +263,7 @@ resources:
           cd /
           git clone https://github.com/jwdavis/ce-demo-lms.git
           cd ce-demo-lms
+          git checkout arch_update
           chmod u+x /ce-demo-lms/admin/finish_web_setup.sh
           /ce-demo-lms/admin/finish_web_setup.sh {} {}
           touch /initialized.txt
@@ -291,6 +294,7 @@ resources:
           cd /
           git clone https://github.com/jwdavis/ce-demo-lms.git
           cd ce-demo-lms
+          git checkout arch_update
           chmod u+x /ce-demo-lms/admin/finish_transcode_setup.sh
           /ce-demo-lms/admin/finish_transcode_setup.sh {}
           touch /initialized.txt
