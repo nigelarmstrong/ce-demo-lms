@@ -20,7 +20,7 @@ def GenerateConfig(context):
 
   for service in context.properties['backend-services']:
     name = service['name']
-
+    enableCDN = service['enableCDN']
     health_checks = []
     for health_check in service['health-checks']:
       health_checks.append('$(ref.{}.selfLink)'.format(health_check))
