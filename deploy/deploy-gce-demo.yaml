@@ -113,7 +113,6 @@ resources:
   properties:
     topic_names:
     - video_to_transcode
-    wait_for_api: true
 
 - name: subscriptions
   type: make_subscriptions.py
