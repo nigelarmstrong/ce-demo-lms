@@ -9,10 +9,12 @@ gsutil cp gs://bdev2_raw_media/mantas.mp4 gs://"bdev2_raw_media_"$DEVSHELL_PROJE
 # setup cloud sql proxy in cloud shell
 uname -a | grep 'Darwin' &> /dev/null
 if [ $? == 0 ]; then
+    kill $(lsof -t -i:3306)
     mkdir ~/proxy
     curl -o ~/proxy/cloud_sql_proxy https://dl.google.com/cloudsql/cloud_sql_proxy.darwin.amd64
     chmod +x ~/proxy/cloud_sql_proxy
 else
+  fuser -k 3306/tcp
   if [ ! -d "`eval echo ~/proxy/`" ]; then
     wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64
     mkdir ~/proxy
@@ -22,7 +24,6 @@ else
 fi
 
 # launch the proxy and run in background
-kill $(lsof -t -i:3306)
 ~/proxy/cloud_sql_proxy -instances=$DEVSHELL_PROJECT_ID:us-central1:<sql_name>=tcp:3306 &
 
 gcloud beta sql users set-password root % \
