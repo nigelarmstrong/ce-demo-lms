@@ -17,22 +17,22 @@ def GenerateConfig(context):
   project = context.env['project']
   resources = []
 
-  for bucket in context.properties['backend-buckets']:
+  for bucket in context.properties['buckets']:
 
     name = bucket['name']
     if bucket['suffix']:
       bucketName = '{}_{}'.format(bucket['bucketName'], project)
     else:
       bucketName = bucket['bucketName']
-    enableCDN = bucket['enableCDN']
+    enableCdn = bucket['enableCdn']
 
     resources.append(
       {
         'name': name,
-        'type': 'compute.v1.backendBucket',
+        'type': 'compute.beta.backendBucket',
         'properties': {
           'bucketName': bucketName,
-          'enableCDN': enableCDN
+          'enableCdn': enableCdn
         }
       })
 
