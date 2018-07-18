@@ -29,8 +29,6 @@ def GenerateConfig(context):
 				'topic': topic_name
 			}
 		}
-		if context.properties['wait_for_api']:
-			resource['metadata'] = {}
 
 		resources.append(resource)
 

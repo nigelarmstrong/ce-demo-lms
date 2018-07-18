@@ -102,7 +102,7 @@ def show_module(module_id):
         module['description'] = row[1]
         module['media'] = row[2]
         module['row'] = row
-    return render_template('module.html', module=module, instance_metadata=INSTANCE_METADATA)
+    return render_template('module.html', module=module, instance_metadata=INSTANCE_METADATA, bucket=current_app.config['CLOUD_STORAGE_BUCKET'])
 
 ### paths ###
 # paths list page

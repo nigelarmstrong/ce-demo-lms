@@ -17,7 +17,7 @@
         <h2>{{ module.name }}</h2>
         <p class="lead">{{ module.description }}</p>
           <video width="480" controls autoplay>
-            <source src="/gcs/{{ module.media }}" type="video/mp4">
+            <source src="https://storage.googleapis.com/{{ bucket }}/{{ module.media }}" type="video/mp4">
             Your browser does not support the video tag.
           </video>
       </div>
@@ -45,6 +45,6 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/static/bs3_nj/ie10-viewport-bug-workaround.js"></script>
-  
+
 
 {% endblock %}
