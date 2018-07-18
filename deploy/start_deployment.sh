@@ -5,8 +5,6 @@ sed -i -e "s/<sql-pass>/$1/g" deploy-gce-demo.yaml
 sed -i -e "s/<sup-pass>/$2/g" deploy-gce-demo.yaml
 sed -i -e "s/<billing>/$3/g" deploy-gce-demo.yaml
 sed -i -e "s/<sql_name>/$4/g" deploy-gce-demo.yaml
-sed -i -e "s/<sql_name>/$4/g" ../admin/supervisor_config/proxy.conf
-sed -i -e "s/<sql_name>/$4/g" ../config.py
 sed -i -e "s/<sql_name>/$4/g" finish_deployment.sh
 
 # enable apis
