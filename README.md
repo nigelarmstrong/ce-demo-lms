@@ -8,7 +8,7 @@
 * In Cloud Shell, run the deployment, providing preferred passwords for SQL and Supervisor
 ```
 cd ~
-git clone https://github.com/jwdavis/ce-demo-lms.git
+git clone https:ls//github.com/jwdavis/ce-demo-lms.git
 cd ~/ce-demo-lms/deploy
 . ./start_deployment.sh <sql_pass> <supervisor_pass> <billing_account_id> <sql_instance_name>
 ```
@@ -18,7 +18,7 @@ git clone https://github.com/jwdavis/ce-demo-lms.git
 cd ~/ce-demo-lms/deploy
 . ./start_deployment.sh sql.pass sup.pass 001153-165B33-99FB93 my-sql-instance
 ```
-* Wait a couple minutes for the load balancer to come online
+* Wait a couple minutes for the load balancer to come online. Overall, it'll take 10+ minutes for the entire solution to be demoable.
 * Open browser pointed at load balancer IP and validate app is running
 
 # Demo instructions
