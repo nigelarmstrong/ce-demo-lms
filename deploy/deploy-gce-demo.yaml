@@ -39,6 +39,8 @@ imports:
   name: make_health_checks.py
 - path: python/make_backend_services.py
   name: make_backend_services.py
+- path: python/make_backend_buckets.py
+  name: make_backend_buckets.py
 - path: python/make_url_maps.py
   name: make_url_maps.py
 - path: python/make_target_proxies.py
@@ -50,7 +52,7 @@ resources:
 - name: buckets
   type: make_public_buckets.py
   properties:
-    suffixes:
+    prefixes:
     - bdev2_raw_media
     - bdev2_media
     storageClass: MULTI_REGIONAL
@@ -411,7 +413,7 @@ resources:
     buckets:
     - videos-bucket:
       name: videos
-      enableCDN: True
+      enableCdn: True
       bucketName: bdev2_raw_media
       suffix: True
 
