@@ -50,7 +50,7 @@ resources:
 - name: buckets
   type: make_public_buckets.py
   properties:
-    prefixes:
+    suffixes:
     - bdev2_raw_media
     - bdev2_media
     storageClass: MULTI_REGIONAL
@@ -404,13 +404,16 @@ resources:
         maxRatePerInstance: 30
         capacityScaler: 1
         group: lms-web-asia
-    # - backend_service-2:
-    #   name: videos
-    #   enableCDN: True
-    #   backends:
-    #   - gcs-backend
-    #     name: gcs-backend
-    #     mode
+
+- name: backend-buckets
+  type: make_backend_buckets.py
+  properties:
+    buckets:
+    - videos-bucket:
+      name: videos
+      enableCDN: True
+      bucketName: bdev2_raw_media
+      suffix: True
 
 - name: maps
   type: make_url_maps.py

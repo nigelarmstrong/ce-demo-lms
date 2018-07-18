@@ -15,14 +15,16 @@
 def GenerateConfig(context):
 
   project = context.env['project']
-  project_number = context.env['project_number']
   resources = []
 
-  for service in context.properties['backend-buckets']:
+  for bucket in context.properties['backend-buckets']:
 
-    name = service['name']
-    bucketName = service['bucketName']
-    enableCDN = service['enableCDN']
+    name = bucket['name']
+    if bucket['suffix']:
+      bucketName = '{}_{}'.format(bucket['bucketName'], project)
+    else:
+      bucketName = bucket['bucketName']
+    enableCDN = bucket['enableCDN']
 
     resources.append(
       {
