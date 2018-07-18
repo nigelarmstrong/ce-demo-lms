@@ -9,7 +9,7 @@
 cd ~
 git clone https://github.com/jwdavis/ce-demo-lms.git
 cd ~/ce-demo-lms/deploy
-. ./start_deployment.sh <sql_pass> <supervisor_pass>
+. ./start_deployment.sh <sql_pass> <supervisor_pass> <billing_account_id> <sql_instance_name>
 ```
 * Wait 60-90 seconds for load balancer to come online
 * Open browser pointed at load balancer IP and validate app is running
