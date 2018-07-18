@@ -198,7 +198,7 @@ resources:
           cd ce-demo-lms
           git checkout arch_update
           chmod u+x /ce-demo-lms/admin/finish_web_setup.sh
-          /ce-demo-lms/admin/finish_web_setup.sh {} {}
+          /ce-demo-lms/admin/finish_web_setup.sh {} {} {}
           touch /initialized.txt
         fi
       script_args:
@@ -232,7 +232,7 @@ resources:
           cd ce-demo-lms
           git checkout arch_update
           chmod u+x /ce-demo-lms/admin/finish_web_setup.sh
-          /ce-demo-lms/admin/finish_web_setup.sh {} {}
+          /ce-demo-lms/admin/finish_web_setup.sh {} {} {}
           touch /initialized.txt
         fi
       script_args:
@@ -266,7 +266,7 @@ resources:
           cd ce-demo-lms
           git checkout arch_update
           chmod u+x /ce-demo-lms/admin/finish_web_setup.sh
-          /ce-demo-lms/admin/finish_web_setup.sh {} {}
+          /ce-demo-lms/admin/finish_web_setup.sh {} {} {}
           touch /initialized.txt
         fi
       script_args:
@@ -404,6 +404,13 @@ resources:
         maxRatePerInstance: 30
         capacityScaler: 1
         group: lms-web-asia
+    # - backend_service-2:
+    #   name: videos
+    #   enableCDN: True
+    #   backends:
+    #   - gcs-backend
+    #     name: gcs-backend
+    #     mode
 
 - name: maps
   type: make_url_maps.py
