@@ -204,6 +204,7 @@ resources:
       script_args:
       - <sql-pass>
       - <sup-pass>
+      - <sql_name>
     - t2:
       machine-type: n1-standard-1
       network: $(ref.lms-network.selfLink)
@@ -237,6 +238,7 @@ resources:
       script_args:
       - <sql-pass>
       - <sup-pass>
+      - <sql_name>
     - t3:
       machine-type: n1-standard-1
       network: $(ref.lms-network.selfLink)
@@ -270,6 +272,7 @@ resources:
       script_args:
       - <sql-pass>
       - <sup-pass>
+      - <sql_name>
     - t4:
       machine-type: n1-standard-1
       network: $(ref.lms-network.selfLink)
