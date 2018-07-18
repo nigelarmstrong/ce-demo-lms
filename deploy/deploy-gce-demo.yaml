@@ -84,92 +84,92 @@ resources:
     - ip2:
       name: gcs-lb-ip
 
-# - name: fw-rules
-#   type: make_fw_rules.py
-#   properties:
-#     rules:
-#     - fw1:
-#       network: $(ref.lms-network.selfLink)
-#       source_ranges:
-#       - 0.0.0.0/0
-#       allowed:
-#       - p1:
-#         IPProtocol: TCP
-#         ports:
-#         - 22
-#       name: lms-network-ssh
-#     - fw2:
-#       network: $(ref.lms-network.selfLink)
-#       target_tags:
-#       - webapp
-#       source_ranges:
-#       - 130.211.0.0/22
-#       - 35.191.0.0/16
-#       allowed:
-#       - p1:
-#         IPProtocol: TCP
-#         ports:
-#         - 80
-#       name: lms-network-http
+- name: fw-rules
+  type: make_fw_rules.py
+  properties:
+    rules:
+    - fw1:
+      network: $(ref.lms-network.selfLink)
+      source_ranges:
+      - 0.0.0.0/0
+      allowed:
+      - p1:
+        IPProtocol: TCP
+        ports:
+        - 22
+      name: lms-network-ssh
+    - fw2:
+      network: $(ref.lms-network.selfLink)
+      target_tags:
+      - webapp
+      source_ranges:
+      - 130.211.0.0/22
+      - 35.191.0.0/16
+      allowed:
+      - p1:
+        IPProtocol: TCP
+        ports:
+        - 80
+      name: lms-network-http
 
-# - name: topics
-#   type: make_topics.py
-#   properties:
-#     topic_names:
-#     - video_to_transcode
+- name: topics
+  type: make_topics.py
+  properties:
+    topic_names:
+    - video_to_transcode
 
-# - name: subscriptions
-#   type: make_subscriptions.py
-#   properties:
-#     sub-names:
-#     - file_ready
-#     sub-subscriptions:
-#     - file_ready
-#     topics:
-#     - video_to_transcode
-#     ack_deadlines:
-#     - 30
+- name: subscriptions
+  type: make_subscriptions.py
+  properties:
+    sub-names:
+    - file_ready
+    sub-subscriptions:
+    - file_ready
+    topics:
+    - video_to_transcode
+    ack_deadlines:
+    - 30
 
-# - name: sql_instance
-#   type: make_sql_instance.py
-#   properties:
-#     name: <sql_name>
-#     region: us-central1
-#     tier: db-n1-standard-1
-#     activationPolicy: ALWAYS
+- name: sql_instance
+  type: make_sql_instance.py
+  properties:
+    name: <sql_name>
+    region: us-central1
+    tier: db-n1-standard-1
+    activationPolicy: ALWAYS
 
-# - name: sql_databases
-#   type: make_databases.py
-#   properties:
-#     db_names:
-#     - lms
-#     instance: <sql_name>
+- name: sql_databases
+  type: make_databases.py
+  properties:
+    db_names:
+    - lms
+    instance: <sql_name>
 
-# - name: vms
-#   type: make_vms.py
-#   properties:
-#     vms:
-#     - vm1:
-#       name: test-us
-#       zone: us-central1-a
-#       machine-type: n1-standard-1
-#       network: $(ref.lms-network.selfLink)
-#       subnet: $(ref.lms-us-sub.selfLink)
-#       startup: sudo apt-get update; sudo apt-get install apache2-utils -y
-#     - vm2:
-#       name: test-eu
-#       zone: europe-west1-b
-#       machine-type: n1-standard-1
-#       network: $(ref.lms-network.selfLink)
-#       subnet: $(ref.lms-eu-sub.selfLink)
-#       startup: sudo apt-get update; sudo apt-get install apache2-utils -y
-#     - vm3:
-#       name: test-asia
-#       zone: asia-east1-a
-#       machine-type: n1-standard-1
-#       network: $(ref.lms-network.selfLink)
-#       subnet: $(ref.lms-asia-sub.selfLink)
-#       startup: sudo apt-get update; sudo apt-get install apache2-utils -y
+- name: vms
+  type: make_vms.py
+  properties:
+    vms:
+    - vm1:
+      name: test-us
+      zone: us-central1-a
+      machine-type: n1-standard-1
+      network: $(ref.lms-network.selfLink)
+      subnet: $(ref.lms-us-sub.selfLink)
+      startup: sudo apt-get update; sudo apt-get install apache2-utils -y
+    - vm2:
+      name: test-eu
+      zone: europe-west1-b
+      machine-type: n1-standard-1
+      network: $(ref.lms-network.selfLink)
+      subnet: $(ref.lms-eu-sub.selfLink)
+      startup: sudo apt-get update; sudo apt-get install apache2-utils -y
+    - vm3:
+      name: test-asia
+      zone: asia-east1-a
+      machine-type: n1-standard-1
+      network: $(ref.lms-network.selfLink)
+      subnet: $(ref.lms-asia-sub.selfLink)
+      startup: sudo apt-get update; sudo apt-get install apache2-utils -y
 
 - name: templates
   type: make_templates.py
@@ -439,21 +439,21 @@ resources:
           - /videos/*
           service_name: videos
 
-# - name: proxies
-#   type: make_target_proxies.py
-#   properties:
-#     proxies:
-#     - proxy1:
-#       name: lms-demo-proxy
-#       map: lms-demo-lb
+- name: proxies
+  type: make_target_proxies.py
+  properties:
+    proxies:
+    - proxy1:
+      name: lms-demo-proxy
+      map: lms-demo-lb
 
-# - name: gfrs
-#   type: make_gfrs.py
-#   properties:
-#     gfrs:
-#     - gfr1:
-#       name: lms-demo-gfr
-#       address: lms-demo-ip
-#       target: $(ref.lms-demo-proxy.selfLink)
-#       ports:
-#       - 80
+- name: gfrs
+  type: make_gfrs.py
+  properties:
+    gfrs:
+    - gfr1:
+      name: lms-demo-gfr
+      address: lms-demo-ip
+      target: $(ref.lms-demo-proxy.selfLink)
+      ports:
+      - 80
