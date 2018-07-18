@@ -1,10 +1,10 @@
  #!/bin/bash
 
 # copy initial files from source bucket
-gsutil cp gs://bdev2_raw_media/ch1.mp4 gs://"bdev2_raw_media_"$DEVSHELL_PROJECT_ID/ch1.mp4
-gsutil cp gs://bdev2_raw_media/ch2.mp4 gs://"bdev2_raw_media_"$DEVSHELL_PROJECT_ID/ch2.mp4
-gsutil cp gs://bdev2_raw_media/ch3.mp4 gs://"bdev2_raw_media_"$DEVSHELL_PROJECT_ID/ch3.mp4
-gsutil cp gs://bdev2_raw_media/mantas.mp4 gs://"bdev2_raw_media_"$DEVSHELL_PROJECT_ID/mantas.mp4
+gsutil cp gs://bdev2_raw_media/ch1.mp4 gs://"bdev2_raw_media_"$DEVSHELL_PROJECT_ID/videos/ch1.mp4
+gsutil cp gs://bdev2_raw_media/ch2.mp4 gs://"bdev2_raw_media_"$DEVSHELL_PROJECT_ID/videos/ch2.mp4
+gsutil cp gs://bdev2_raw_media/ch3.mp4 gs://"bdev2_raw_media_"$DEVSHELL_PROJECT_ID/videos/ch3.mp4
+gsutil cp gs://bdev2_raw_media/mantas.mp4 gs://"bdev2_raw_media_"$DEVSHELL_PROJECT_ID/videos/mantas.mp4
 
 # setup cloud sql proxy in cloud shell
 uname -a | grep 'Darwin' &> /dev/null

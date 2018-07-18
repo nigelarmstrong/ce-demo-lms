@@ -383,7 +383,7 @@ resources:
     backend-services:
     - backend_service-1:
       name: lms-backend-service
-      enableCDN: True
+      enableCdn: True
       health-checks:
       - lms-health-check
       backends:
@@ -433,7 +433,7 @@ resources:
       path_matchers:
       - pm1:
         name: pm-1
-        default_service: videos
+        default_service: lms-backend-service
         path_rules:
         - paths:
           - /videos/*

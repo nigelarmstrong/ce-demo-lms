@@ -1,5 +1,6 @@
 # Setup
 
+### Project
 * Create a project to contain resources used in this demo
 
 ### LMS setup
@@ -11,7 +12,13 @@ git clone https://github.com/jwdavis/ce-demo-lms.git
 cd ~/ce-demo-lms/deploy
 . ./start_deployment.sh <sql_pass> <supervisor_pass> <billing_account_id> <sql_instance_name>
 ```
-* Wait 60-90 seconds for load balancer to come online
+For example...
+```
+git clone https://github.com/jwdavis/ce-demo-lms.git
+cd ~/ce-demo-lms/deploy
+. ./start_deployment.sh sql.pass sup.pass 001153-165B33-99FB93 my-sql-instance
+```
+* Wait a couple minutes for the load balancer to come online
 * Open browser pointed at load balancer IP and validate app is running
 
 # Demo instructions
@@ -29,14 +36,15 @@ cd ~/ce-demo-lms/deploy
 
 ### Stage 3 - Show load balancer
 * global ip
-* backend service page
+* backend service page (note cdn)
+* backend bucket page (note cdn)
+* url map page
 
 ### Stage 4 - Show managed instance groups
 * show the three web and one transcode
 * show autoscaling setup
 
 ### Stage 5 - show traffic distribution
-* start up test machines (if they have been stopped)
 * ssh into test machines in na,eu,asia
 * generate load from three regions
 ```ab -n 1500 -c 1 http://<your ip>/gcs/mantas.mp4```

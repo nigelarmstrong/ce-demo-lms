@@ -15,7 +15,7 @@ gcloud services enable sqladmin.googleapis.com
 gcloud services enable pubsub.googleapis.com
 
 # create the deployment
-gcloud deployment-manager deployments create lms --config deploy-gce-demo.yaml
+gcloud deployment-manager deployments create lms --config deploy.yaml
 
 # finish up with post-deployment actions
 . ./finish_deployment.sh $1
