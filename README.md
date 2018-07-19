@@ -65,4 +65,9 @@ cd ~/ce-demo-lms/deploy
 * show new server spinning up
 * show cpu utilization in instance group
 
-### optional Stage 8 - build the whole thing from scratch
+### Optional - Deployment manager demo
+* The entire build is handled via DM
+* Can be fun to start deployment, then show students
+* The details page for the deployment shows all the dependencies in action
+* The template and python files gives a good idea of how DM works.
+
