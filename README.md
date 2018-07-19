@@ -8,7 +8,7 @@
 1. In Cloud Shell, run the deployment, providing preferred passwords for SQL and Supervisor
 ```
 cd ~
-git clone https:ls//github.com/jwdavis/ce-demo-lms.git
+git clone https://github.com/jwdavis/ce-demo-lms.git
 cd ~/ce-demo-lms/deploy
 . ./start_deployment.sh <sql_pass> <supervisor_pass> <billing_account_id> <sql_instance_name>
 ```
@@ -45,7 +45,7 @@ cd ~/ce-demo-lms/deploy
 1. show autoscaling setup
 
 ### Stage 5 - show traffic distribution
-1. ssh into test machines in na,eu,asia
+1. ssh into test machines in us, europe, asia
 1. generate load from three regions
 ```watch -n 1 curl -o /dev/null http://<ip>/```
 1. backend takes 30-60 seconds to refresh; stall
@@ -56,6 +56,8 @@ cd ~/ce-demo-lms/deploy
 ```ab -n 2500 -c 1 http://<ip>/videos/mantas.mp4```
 1. show each vm having similar performance (though videos in us)
 1. show no increase in load on backend service (served from bucket)
+1. You may note that CDN only caches objects <10MB (mantas video is)
+1. There's a beta for large object caching
 
 ### Stage 6 - show autoscaling web app
 1. generate high rps load from each test machine
@@ -64,7 +66,7 @@ cd ~/ce-demo-lms/deploy
 1. show backend page update
 1. watch the test machines to see if ab errors out
 
-### Stage 8 - show autoscaling transcoding servers
+### Optional - show autoscaling transcoding servers
 1. show raw media bucket
 1. show transcoded media bucket
 1. create module with video

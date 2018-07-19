@@ -42,7 +42,7 @@ def upload_file(file):
 
     public_url = storage.upload_file(
         file.read(),
-        "/videos/{}".format(file.filename),
+        "videos/{}".format(file.filename),
         file.content_type
     )
     return public_url
