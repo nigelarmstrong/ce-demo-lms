@@ -1,10 +1,10 @@
  #!/bin/bash
 
 # update files to use command-line provided args
-sed -i -e "s/<sql-pass>/$1/g" deploy-gce-demo.yaml
-sed -i -e "s/<sup-pass>/$2/g" deploy-gce-demo.yaml
-sed -i -e "s/<sql_name>/$4/g" deploy-gce-demo.yaml
-sed -i -e "s/<billing>/$3/g" deploy-gce-demo.yaml
+sed -i -e "s/<sql-pass>/$1/g" deploy.yaml
+sed -i -e "s/<sup-pass>/$2/g" deploy.yaml
+sed -i -e "s/<sql_name>/$4/g" deploy.yaml
+sed -i -e "s/<billing>/$3/g" deploy.yaml
 sed -i -e "s/<sql_name>/$4/g" finish_deployment.sh
 
 # enable apis
