@@ -50,7 +50,7 @@ def upload_file(file_stream, filename, content_type):
     Uploads a file to a given Cloud Storage bucket and returns the public url
     to the new object.
     """
-    filename = _safe_filename(filename)
+    filename = "videos/{}".format(_safe_filename(filename))
 
     client = _get_storage_client()
     bucket = client.get_bucket(current_app.config['CLOUD_STORAGE_BUCKET'])

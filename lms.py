@@ -77,7 +77,7 @@ def create_module():
         media_url = upload_file(request.files.get('module_media'))
         pieces = media_url.split('/')
         object_name = pieces[len(pieces)-1]
-        pubsub.publish(TOPIC,b'file submitted',object_name)
+        pubsub.publish(TOPIC, b'file submitted', object_name)
         for index in range(0,10):
             pubsub.stuff_queue(TOPIC)
         db = MySQLdb.connect(host="127.0.0.1", user="root", passwd=config.SQL_PASSWORD)
