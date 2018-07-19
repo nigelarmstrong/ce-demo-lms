@@ -61,7 +61,7 @@ cd ~/ce-demo-lms/deploy
 
 ### Stage 6 - show autoscaling web app
 1. generate high rps load from each test machine
-```ab -n 100000 -c 16 http://<ip>/```
+```ab -n 100000 -c 3 -r -l http://<ip>/```
 1. show instance groups changing size
 1. show backend page update
 1. watch the test machines to see if ab errors out
