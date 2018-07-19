@@ -322,7 +322,7 @@ resources:
       autoscaler:
         min: 1
         max: 5
-        cool: 30
+        cool: 60
         util: .8
         criteria: load_balancer
     - mig-eu:
@@ -335,7 +335,7 @@ resources:
       autoscaler:
         min: 1
         max: 5
-        cool: 30
+        cool: 60
         util: .8
         criteria: load_balancer
     - mig-asia:
@@ -348,7 +348,7 @@ resources:
       autoscaler:
         min: 1
         max: 5
-        cool: 30
+        cool: 60
         util: .8
         criteria: load_balancer
     - mig-transcode:
@@ -361,7 +361,7 @@ resources:
       autoscaler:
         min: 1
         max: 5
-        cool: 30
+        cool: 120
         util: .7
         criteria: cpu
 
