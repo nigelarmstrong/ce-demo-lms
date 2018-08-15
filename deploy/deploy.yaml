@@ -198,7 +198,7 @@ resources:
           apt-get update
           apt-get install -y git
           cd /
-          git clone https://github.com/jwdavis/ce-demo-lms.git
+          git clone https://github.com/nigelarmstrong/ce-demo-lms.git
           cd ce-demo-lms
           chmod u+x /ce-demo-lms/admin/finish_web_setup.sh
           /ce-demo-lms/admin/finish_web_setup.sh {} {} {}
@@ -231,7 +231,7 @@ resources:
           apt-get update
           apt-get install -y git
           cd /
-          git clone https://github.com/jwdavis/ce-demo-lms.git
+          git clone https://github.com/nigelarmstrong/ce-demo-lms.git
           cd ce-demo-lms
           chmod u+x /ce-demo-lms/admin/finish_web_setup.sh
           /ce-demo-lms/admin/finish_web_setup.sh {} {} {}
@@ -264,7 +264,7 @@ resources:
           apt-get update
           apt-get install -y git
           cd /
-          git clone https://github.com/jwdavis/ce-demo-lms.git
+          git clone https://github.com/nigelarmstrong/ce-demo-lms.git
           cd ce-demo-lms
           chmod u+x /ce-demo-lms/admin/finish_web_setup.sh
           /ce-demo-lms/admin/finish_web_setup.sh {} {} {}
@@ -295,7 +295,7 @@ resources:
           apt-get update
           apt-get install -y git
           cd /
-          git clone https://github.com/jwdavis/ce-demo-lms.git
+          git clone https://github.com/nigelarmstrong/ce-demo-lms.git
           cd ce-demo-lms
           chmod u+x /ce-demo-lms/admin/finish_transcode_setup.sh
           /ce-demo-lms/admin/finish_transcode_setup.sh {}
